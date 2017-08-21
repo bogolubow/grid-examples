@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@include grid('', $col-number);
+
+@each $name, $value in $breakpoints {
+    @media all and (min-width: #{$value}) {
+        @include grid($name, $col-number);
+    }
+}

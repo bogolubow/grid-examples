@@ -1,0 +1,13 @@
+@mixin grid($name, $columns) {
+    @for $i from 1 through $columns {
+        $col: col-#{$i};
+
+        @if $name != '' {
+            $col: col-#{$name}-#{$i};
+        }
+
+        [class*=#{$col}] {
+            flex-basis: 100% / 12 * $i; 
+        }
+    }
+}
