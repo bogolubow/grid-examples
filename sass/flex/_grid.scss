@@ -1,6 +1,11 @@
 .row {
     display: flex;
     flex-wrap: wrap;
+    box-sizing: border-box;
+
+    * {
+        box-sizing: inherit;
+    }
 }
 
 @include grid('', $col-number);
