@@ -1,13 +1,22 @@
 @mixin grid($name, $columns) {
+    $prefix: '';
+    
+    @if $name != '' {
+        $prefix: #{$name}-;
+    }
+            
     @for $i from 1 through $columns {
-        $col: col-#{$i};
 
-        @if $name != '' {
-            $col: col-#{$name}-#{$i};
-        }
-
-        [class*=#{$col}] {
+        [class*=col-#{$prefix}#{$i}] {
             flex-basis: 100% / 12 * $i; 
+        }
+    }
+
+    .row {
+        @each $align-name, $align-value in $aligns {
+            & > .#{$prefix}align-#{$align-name} {
+                align-self: #{$align-value};
+            }
         }
     }
 }
