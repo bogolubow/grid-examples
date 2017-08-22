@@ -41,10 +41,10 @@
     }
 }
 
-@include grid('', $col-number);
+@include grid('', $columns);
 
 @each $name, $value in $breakpoints {
     @media all and (min-width: #{$value}) {
-        @include grid($name, $col-number);
+        @include grid($name, $columns);
     }
 }
