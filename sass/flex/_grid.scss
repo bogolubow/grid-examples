@@ -6,6 +6,33 @@
     * {
         box-sizing: inherit;
     }
+
+    /* item/s to top */
+    &.align-top {
+        align-items: flex-start;
+    }
+
+    & > .align-top {
+        align-self: flex-start;
+    }
+
+    /* item/s to middle */
+    &.align-center {
+        align-items: center;
+    }
+
+    & > .align-center {
+        align-self: center;
+    }
+
+    /* item/s to bottom */
+    &.align-bottom {
+        align-items: flex-end;
+    }
+
+    & > .align-bottom {
+        align-self: flex-end;
+    }
 }
 
 @include grid('', $col-number);
