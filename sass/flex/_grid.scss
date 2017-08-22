@@ -7,6 +7,12 @@
         box-sizing: inherit;
     }
 
+    &.gutter {
+        & > [class*=col] {
+            padding: 15px;
+        }
+    }
+
     /* item/s to top */
     &.align-top {
         align-items: flex-start;
