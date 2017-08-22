@@ -18,6 +18,11 @@
             align-items: #{$align-value};
         }
     }
+
+    & > [class*=col] {
+        overflow: hidden;
+        min-height: 1px;
+    }
 }
 
 @include grid('', $columns);
